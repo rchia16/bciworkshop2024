@@ -1,0 +1,22 @@
+name: bciworkshop
+dependencies:
+  - python=3.8
+  - pip
+  - git
+  - jupyter
+  - matplotlib
+  - seaborn
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - tensorflow
+  - pip:
+    - PyWavelets
+    - EntropyHub
+    - emd
+    - bsl
+    - mne
+    - ipdb
+variables:
+  KMP_DUPLICATE_LIB_OK: True
