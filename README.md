@@ -19,4 +19,4 @@ conda env create -f environment.yml
 
 ## Colab
 
-Load to colab by specifying the github link.
+Load to colab by specifying the github account or directly uploading files to a new environment.
