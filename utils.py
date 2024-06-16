@@ -41,6 +41,18 @@ def get_channel_names(data_dict):
     return ch_names
 
 def get_marker_freq_data(marker_dict, re_str="\d+\.\d+"):
+    '''
+    Returns the SSVEP marker labels (in frequency) and time stamps for each
+    event.
+
+    :param marker_dict: dictionary input from xdf file
+    :type marker_dict: dict
+    :param re_str: regex string
+    :type re_str: str
+
+    :return: the SSVEP marker event labels and timestamps
+    :return type: tuple
+    '''
     marker_timestamps = marker_dict['time_stamps']
     marker_labels = marker_dict['time_series']
 
@@ -52,6 +64,18 @@ def get_marker_freq_data(marker_dict, re_str="\d+\.\d+"):
     return marker_labels, marker_timestamps
 
 def get_marker_data(marker_dict, re_str="\d+\.\d+"):
+    '''
+    Returns the marker labels (ssvep or eyes closed) and time stamps for each
+    event.
+
+    :param marker_dict: dictionary input from xdf file
+    :type marker_dict: dict
+    :param marker_dict: dictionary input from xdf file
+    :type marker_dict: dict
+
+    :return: the marker event labels and timestamps
+    :return type: tuple
+    '''
     marker_timestamps = marker_dict['time_stamps']
     marker_labels = marker_dict['time_series']
 
@@ -69,11 +93,6 @@ def get_marker_data(marker_dict, re_str="\d+\.\d+"):
 
     marker_labels = np.array(tmp)
     marker_timestamps = np.array(time_tmp)
-    # marker_labels = np.array([float(re.findall(re_str, val[0]).pop()) for val in
-    #                           marker_labels])
-
-    # marker_labels = np.insert(marker_labels, 0, 11.0)
-    # marker_timestamps = np.insert(marker_timestamps, 0 , marker_timestamps[0]-5)
 
     marker_labels = np.append(marker_labels, np.nan)
     marker_timestamps = np.append(marker_timestamps, marker_timestamps[-1]+5)
