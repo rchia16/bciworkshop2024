@@ -70,6 +70,8 @@ def get_marker_data(marker_dict, re_str="open"):
 
     :param marker_dict: dictionary input from xdf file
     :type marker_dict: dict
+    :param re_str: string search for markers
+    :type re_str: str
 
     :return: the marker event labels and timestamps
     :return type: tuple
