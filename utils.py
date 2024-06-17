@@ -63,7 +63,7 @@ def get_marker_freq_data(marker_dict, re_str="\d+\.\d+"):
     marker_timestamps = np.append(marker_timestamps, marker_timestamps[-1]+5)
     return marker_labels, marker_timestamps
 
-def get_marker_data(marker_dict):
+def get_marker_data(marker_dict, re_str="open"):
     '''
     Returns the marker labels (ssvep or eyes closed) and time stamps for each
     event.
@@ -82,7 +82,7 @@ def get_marker_data(marker_dict):
     for val, t in zip(marker_labels, marker_timestamps):
         if 'look' not in val[0]: continue
 
-        if 'not' in val[0]:
+        if re_str in val[0]:
             tmp.append(0)
         else:
             tmp.append(1)
