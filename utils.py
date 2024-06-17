@@ -82,7 +82,7 @@ def get_marker_data(marker_dict, re_str="open"):
     tmp = []
     time_tmp = []
     for val, t in zip(marker_labels, marker_timestamps):
-        if val[0] not in ['eyes', 'look']: continue
+        if 'eye' not in val[0]: continue
 
         if re_str in val[0]:
             tmp.append(0)
