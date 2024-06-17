@@ -70,7 +70,7 @@ def get_marker_data(marker_dict, re_str="open"):
 
     :param marker_dict: dictionary input from xdf file
     :type marker_dict: dict
-    :param re_str: string search for markers
+    :param re_str: string search for markers (either 'open' or 'not')
     :type re_str: str
 
     :return: the marker event labels and timestamps
@@ -82,7 +82,7 @@ def get_marker_data(marker_dict, re_str="open"):
     tmp = []
     time_tmp = []
     for val, t in zip(marker_labels, marker_timestamps):
-        if 'look' not in val[0]: continue
+        if val[0] not in ['eyes', 'look']: continue
 
         if re_str in val[0]:
             tmp.append(0)
